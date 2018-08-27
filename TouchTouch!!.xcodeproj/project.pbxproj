@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3011696F212AFFA3005AC28A /* ResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3011696E212AFFA3005AC28A /* ResultViewController.swift */; };
 		3026680120EBA1EA00D12682 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3026680020EBA1EA00D12682 /* AppDelegate.swift */; };
 		3026680320EBA1EA00D12682 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3026680220EBA1EA00D12682 /* MainViewController.swift */; };
 		3026680620EBA1EA00D12682 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3026680420EBA1EA00D12682 /* Main.storyboard */; };
@@ -15,11 +16,15 @@
 		3026681320EBA37A00D12682 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3026681220EBA37A00D12682 /* GoogleService-Info.plist */; };
 		3026681620EBA5A000D12682 /* SignUpController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3026681520EBA5A000D12682 /* SignUpController.swift */; };
 		3026681820EBA9EA00D12682 /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3026681720EBA9EA00D12682 /* LoginController.swift */; };
+		3050F03E20F60F36002F073E /* StartTimerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3050F03D20F60F36002F073E /* StartTimerController.swift */; };
+		3050F04020F613CA002F073E /* MainGameFieldController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3050F03F20F613CA002F073E /* MainGameFieldController.swift */; };
+		305C678121311FE8000256E1 /* Users.swift in Sources */ = {isa = PBXBuildFile; fileRef = 305C678021311FE8000256E1 /* Users.swift */; };
 		A29396B8F78867AAB1032489 /* Pods_TouchTouch__.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD48D4D21AB4CD6100968DED /* Pods_TouchTouch__.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		1B4AF91FC20C6CED387A0F14 /* Pods-TouchTouch!!.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TouchTouch!!.release.xcconfig"; path = "Pods/Target Support Files/Pods-TouchTouch!!/Pods-TouchTouch!!.release.xcconfig"; sourceTree = "<group>"; };
+		3011696E212AFFA3005AC28A /* ResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultViewController.swift; sourceTree = "<group>"; };
 		302667FD20EBA1EA00D12682 /* TouchTouch!!.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "TouchTouch!!.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3026680020EBA1EA00D12682 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3026680220EBA1EA00D12682 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -30,6 +35,9 @@
 		3026681220EBA37A00D12682 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		3026681520EBA5A000D12682 /* SignUpController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpController.swift; sourceTree = "<group>"; };
 		3026681720EBA9EA00D12682 /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
+		3050F03D20F60F36002F073E /* StartTimerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartTimerController.swift; sourceTree = "<group>"; };
+		3050F03F20F613CA002F073E /* MainGameFieldController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainGameFieldController.swift; sourceTree = "<group>"; };
+		305C678021311FE8000256E1 /* Users.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Users.swift; sourceTree = "<group>"; };
 		CD48D4D21AB4CD6100968DED /* Pods_TouchTouch__.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TouchTouch__.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA299B94A28EA396CFB9B23A /* Pods-TouchTouch!!.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TouchTouch!!.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TouchTouch!!/Pods-TouchTouch!!.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -46,6 +54,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		30116969212AFDA3005AC28A /* Result */ = {
+			isa = PBXGroup;
+			children = (
+				3011696E212AFFA3005AC28A /* ResultViewController.swift */,
+			);
+			path = Result;
+			sourceTree = "<group>";
+		};
 		302667F420EBA1EA00D12682 = {
 			isa = PBXGroup;
 			children = (
@@ -67,7 +83,10 @@
 		302667FF20EBA1EA00D12682 /* TouchTouch!! */ = {
 			isa = PBXGroup;
 			children = (
-				3026681420EBA57700D12682 /* SingupLoginControllers */,
+				305C678221312601000256E1 /* Models */,
+				3026681420EBA57700D12682 /* SingupLogin */,
+				3050F03C20F60EE6002F073E /* MainGameField */,
+				30116969212AFDA3005AC28A /* Result */,
 				3026680020EBA1EA00D12682 /* AppDelegate.swift */,
 				3026680220EBA1EA00D12682 /* MainViewController.swift */,
 				3026680420EBA1EA00D12682 /* Main.storyboard */,
@@ -79,13 +98,30 @@
 			path = "TouchTouch!!";
 			sourceTree = "<group>";
 		};
-		3026681420EBA57700D12682 /* SingupLoginControllers */ = {
+		3026681420EBA57700D12682 /* SingupLogin */ = {
 			isa = PBXGroup;
 			children = (
 				3026681520EBA5A000D12682 /* SignUpController.swift */,
 				3026681720EBA9EA00D12682 /* LoginController.swift */,
 			);
-			path = SingupLoginControllers;
+			path = SingupLogin;
+			sourceTree = "<group>";
+		};
+		3050F03C20F60EE6002F073E /* MainGameField */ = {
+			isa = PBXGroup;
+			children = (
+				3050F03D20F60F36002F073E /* StartTimerController.swift */,
+				3050F03F20F613CA002F073E /* MainGameFieldController.swift */,
+			);
+			path = MainGameField;
+			sourceTree = "<group>";
+		};
+		305C678221312601000256E1 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				305C678021311FE8000256E1 /* Users.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		5F5679C32EA54DE59BB644D3 /* Pods */ = {
@@ -219,12 +255,14 @@
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
 				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -240,8 +278,12 @@
 			files = (
 				3026680320EBA1EA00D12682 /* MainViewController.swift in Sources */,
 				3026681820EBA9EA00D12682 /* LoginController.swift in Sources */,
+				3011696F212AFFA3005AC28A /* ResultViewController.swift in Sources */,
+				305C678121311FE8000256E1 /* Users.swift in Sources */,
+				3050F03E20F60F36002F073E /* StartTimerController.swift in Sources */,
 				3026680120EBA1EA00D12682 /* AppDelegate.swift in Sources */,
 				3026681620EBA5A000D12682 /* SignUpController.swift in Sources */,
+				3050F04020F613CA002F073E /* MainGameFieldController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
