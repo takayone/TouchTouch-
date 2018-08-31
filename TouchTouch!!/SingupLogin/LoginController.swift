@@ -17,8 +17,8 @@ class LoginController: UIViewController{
         
         view.addSubview(logoImageView)
         logoImageView.translatesAutoresizingMaskIntoConstraints = false
-        logoImageView.heightAnchor.constraint(lessThanOrEqualToConstant: 200).isActive = true
-        logoImageView.widthAnchor.constraint(lessThanOrEqualToConstant: 50).isActive = true
+        logoImageView.heightAnchor.constraint(equalToConstant: 120).isActive = true
+        logoImageView.widthAnchor.constraint(equalToConstant: 120).isActive = true
         logoImageView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         logoImageView.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
         logoImageView.contentMode = .scaleAspectFill
@@ -26,18 +26,6 @@ class LoginController: UIViewController{
         return view
     }()
     
-//    let logContainerView: UIView = {
-//        let view = UIView()
-//        let logoImageView = UIImageView(image: #imageLiteral(resourceName: "Instagram_logo_white"))
-//
-//        view.addSubview(logoImageView)
-//        logoImageView.anchor(top: nil, left: nil, bottom: nil, right: nil, paddingTop: 0, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: 200, height: 50)
-//        logoImageView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-//        logoImageView.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
-//        logoImageView.contentMode = .scaleAspectFill
-//        view.backgroundColor = UIColor.rgb(red: 0, green: 120, blue: 175)
-//        return view
-//    }()
     
     let emailTextField: UITextField = {
         let tf = UITextField()
@@ -45,7 +33,6 @@ class LoginController: UIViewController{
         tf.backgroundColor = UIColor(white: 0, alpha: 0.03)
         tf.font = UIFont.systemFont(ofSize: 14)
         tf.borderStyle = .roundedRect
-        //        tf.addTarget(self, action: #selector(handleTextInputChange), for: .editingChanged)
         return tf
     }()
     
@@ -73,20 +60,35 @@ class LoginController: UIViewController{
         return button
     }()
     
+    let errorScreenLabel: UILabel = {
+        let label = UILabel()
+        label.text = "Error. Please put valid e-mail and password."
+        label.textColor = UIColor.red
+        label.font = UIFont.boldSystemFont(ofSize: 18)
+        label.numberOfLines = 2
+        return label
+    }()
+    
     @objc func handleLogin(){
         
         guard let email = emailTextField.text else {return}
         guard let password = passwordTextField.text else {return}
         
         Auth.auth().signIn(withEmail: email, password: password) { (result, err) in
+            
             if let err = err{
                 print("failed to login", err)
+                self.errorScreenLabel.isHidden = false
             }
             
-//            guard let mainViewController = UIApplication.shared.keyWindow?.rootViewController as? MainViewController else{return}
-//            
-            self.dismiss(animated: true, completion: nil)
-        }
+            if (result != nil){
+                let mainViewController = MainViewController()
+                self.present(mainViewController, animated: true, completion: nil)
+            }
+            
+            }
+        
+       
     }
     
     
@@ -102,7 +104,6 @@ class LoginController: UIViewController{
         }
         
     }
-    
     
     
     let dontHaveAccountButton: UIButton = {
@@ -127,31 +128,35 @@ class LoginController: UIViewController{
         return .lightContent
     }
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-//        view.addSubview(logContainerView)
-//        logContainerView.anchor(top: view.topAnchor, left: view.leftAnchor, bottom: nil, right: view.rightAnchor, paddingTop: 0, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: 0, height: 150)
 
+      
+        navigationController?.isNavigationBarHidden = true
+        view.backgroundColor = UIColor.white
+        
+        setUpLogoContainerView()
+        setUpdontHaveAccountButton()
+        setupInputField()
+    }
+    
+    fileprivate func setUpLogoContainerView(){
         view.addSubview(logoContainerView)
         logoContainerView.translatesAutoresizingMaskIntoConstraints = false
         logoContainerView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
         logoContainerView.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
         logoContainerView.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
         logoContainerView.heightAnchor.constraint(equalToConstant: 150).isActive = true
-        
-        
-        navigationController?.isNavigationBarHidden = true
-        view.backgroundColor = UIColor.white
+    }
+    
+    fileprivate func setUpdontHaveAccountButton(){
         view.addSubview(dontHaveAccountButton)
         dontHaveAccountButton.translatesAutoresizingMaskIntoConstraints = false
         dontHaveAccountButton.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
         dontHaveAccountButton.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
         dontHaveAccountButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         dontHaveAccountButton.heightAnchor.constraint(equalToConstant: 50).isActive = true
-//        dontHaveAccountButton.anchor(top: nil, left: view.leftAnchor, bottom: view.bottomAnchor, right: view.rightAnchor, paddingTop: 0, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: 0, height: 50)
-//
-        setupInputField()
     }
     
     fileprivate func setupInputField(){
@@ -167,7 +172,13 @@ class LoginController: UIViewController{
         stackView.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -40).isActive = true
         stackView.heightAnchor.constraint(equalToConstant: 140).isActive = true
         
-//        stackView.anchor(top: logContainerView.bottomAnchor, left: view.leftAnchor, bottom: nil, right: view.rightAnchor, paddingTop: 40, paddingLeft: 40, paddingBottom: 0, paddingRight: 40, width: 0, height: 140)
+        errorScreenLabel.isHidden = true
+        view.addSubview(errorScreenLabel)
+        errorScreenLabel.translatesAutoresizingMaskIntoConstraints = false
+        errorScreenLabel.topAnchor.constraint(equalTo: stackView.bottomAnchor, constant: 20).isActive = true
+        errorScreenLabel.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 40).isActive = true
+        errorScreenLabel.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -40).isActive = true
+        errorScreenLabel.heightAnchor.constraint(equalToConstant: 100).isActive = true
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {

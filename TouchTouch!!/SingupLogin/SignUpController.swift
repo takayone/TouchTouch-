@@ -99,6 +99,15 @@ class SignUpController: UIViewController, UIImagePickerControllerDelegate, UINav
         return button
     }()
     
+    let errorScreenLabel: UILabel = {
+        let label = UILabel()
+        label.text = "Error. Please put valid e-mail and password should be over 6 characters."
+        label.textColor = UIColor.red
+        label.font = UIFont.boldSystemFont(ofSize: 18)
+        label.numberOfLines = 3
+        return label
+    }()
+    
     @objc func handleSignUp(){
         
         guard let email = emailTextField.text, email.count > 0 else {return}
@@ -112,6 +121,7 @@ class SignUpController: UIViewController, UIImagePickerControllerDelegate, UINav
             
             if let err = error {
                 print("failed to creat user", err)
+                self.errorScreenLabel.isHidden = false
                 return
             }
             
@@ -178,14 +188,18 @@ class SignUpController: UIViewController, UIImagePickerControllerDelegate, UINav
         
         view.backgroundColor = .white
         
+        setUpPlusandAccountButton()
+
+        setUpInputFields()
+    }
+    
+    fileprivate func setUpPlusandAccountButton(){
         plusPhotoButton.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(plusPhotoButton)
         plusPhotoButton.topAnchor.constraint(equalTo: view.topAnchor, constant: 100).isActive = true
         plusPhotoButton.widthAnchor.constraint(equalToConstant: 140).isActive = true
         plusPhotoButton.heightAnchor.constraint(equalToConstant: 140).isActive = true
-        
         plusPhotoButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        
         
         alreadyHaveAccountButton.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(alreadyHaveAccountButton)
@@ -193,8 +207,6 @@ class SignUpController: UIViewController, UIImagePickerControllerDelegate, UINav
         alreadyHaveAccountButton.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
         alreadyHaveAccountButton.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
         alreadyHaveAccountButton.heightAnchor.constraint(equalToConstant: 50).isActive = true
-
-        setUpInputFields()
     }
     
     fileprivate func setUpInputFields(){
@@ -210,7 +222,15 @@ class SignUpController: UIViewController, UIImagePickerControllerDelegate, UINav
         stackView.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 40).isActive = true
         stackView.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -40).isActive = true
         stackView.heightAnchor.constraint(equalToConstant: 200).isActive = true
- 
+        
+        errorScreenLabel.isHidden = true
+        view.addSubview(errorScreenLabel)
+        errorScreenLabel.translatesAutoresizingMaskIntoConstraints = false
+        errorScreenLabel.topAnchor.constraint(equalTo: stackView.bottomAnchor, constant: 10).isActive = true
+        errorScreenLabel.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 40).isActive = true
+        errorScreenLabel.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -40).isActive = true
+        errorScreenLabel.heightAnchor.constraint(equalToConstant: 100).isActive = true
+        
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {

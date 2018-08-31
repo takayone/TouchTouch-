@@ -32,6 +32,11 @@ class StartTimerController: UIViewController{
         
         timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(updateTimer), userInfo: nil, repeats: true)
         
+        setUpImageLabel()
+    }
+    
+    
+    fileprivate func setUpImageLabel(){
         view.addSubview(backgroundImage)
         backgroundImage.translatesAutoresizingMaskIntoConstraints = false
         backgroundImage.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
@@ -45,8 +50,6 @@ class StartTimerController: UIViewController{
         countLabel.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
         countLabel.heightAnchor.constraint(equalToConstant: 80).isActive = true
         countLabel.widthAnchor.constraint(equalToConstant: 80).isActive = true
-        
-      
         
     }
     

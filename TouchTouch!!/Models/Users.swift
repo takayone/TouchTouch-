@@ -11,4 +11,5 @@ import Foundation
 class Users{
     var userName : String = ""
     var profileImageUrl: String = ""
+    var score: Int = 0
 }
