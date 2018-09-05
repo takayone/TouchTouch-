@@ -88,10 +88,9 @@
 		302667FF20EBA1EA00D12682 /* TouchTouch!! */ = {
 			isa = PBXGroup;
 			children = (
+				308C7A57213FB053005F9119 /* StageMode */,
 				305C678221312601000256E1 /* Models */,
-				3026681420EBA57700D12682 /* SingupLogin */,
-				3050F03C20F60EE6002F073E /* MainGameField */,
-				30116969212AFDA3005AC28A /* Result */,
+				308C7A56213FAFF8005F9119 /* SingleMode */,
 				3026680020EBA1EA00D12682 /* AppDelegate.swift */,
 				3026680220EBA1EA00D12682 /* MainViewController.swift */,
 				3026680420EBA1EA00D12682 /* Main.storyboard */,
@@ -133,9 +132,26 @@
 		305C678221312601000256E1 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				3026681420EBA57700D12682 /* SingupLogin */,
 				305C678021311FE8000256E1 /* Users.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		308C7A56213FAFF8005F9119 /* SingleMode */ = {
+			isa = PBXGroup;
+			children = (
+				3050F03C20F60EE6002F073E /* MainGameField */,
+				30116969212AFDA3005AC28A /* Result */,
+			);
+			path = SingleMode;
+			sourceTree = "<group>";
+		};
+		308C7A57213FB053005F9119 /* StageMode */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = StageMode;
 			sourceTree = "<group>";
 		};
 		5F5679C32EA54DE59BB644D3 /* Pods */ = {

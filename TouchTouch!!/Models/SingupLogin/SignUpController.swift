@@ -115,7 +115,6 @@ class SignUpController: UIViewController, UIImagePickerControllerDelegate, UINav
         guard let password = passwordTextField.text, password.count > 0 else {return}
         
         
-        
         Auth.auth().createUser(withEmail: email, password: password) { (result, error) in
             
             
@@ -192,6 +191,7 @@ class SignUpController: UIViewController, UIImagePickerControllerDelegate, UINav
 
         setUpInputFields()
     }
+    
     
     fileprivate func setUpPlusandAccountButton(){
         plusPhotoButton.translatesAutoresizingMaskIntoConstraints = false

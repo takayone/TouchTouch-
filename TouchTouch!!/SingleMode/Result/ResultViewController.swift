@@ -78,7 +78,6 @@ class ResultViewController: UIViewController, UITableViewDelegate, UITableViewDa
         super.viewDidLoad()
         
         view.backgroundColor = UIColor(red: 0/255, green: 120/255, blue: 175/255, alpha: 1)
-        
         tableViewSetup()
         scoreUsernameRetrieve()
         userRankingretrieve()
@@ -129,6 +128,8 @@ class ResultViewController: UIViewController, UITableViewDelegate, UITableViewDa
         backImage.heightAnchor.constraint(equalToConstant: 30).isActive = true
     }
     
+    
+    
     func scoreUsernameRetrieve(){
         guard let uid = Auth.auth().currentUser?.uid else {return}
         scoreDB.child(uid).observeSingleEvent(of: .value) { (snapshot) in
@@ -144,7 +145,11 @@ class ResultViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     func userRankingretrieve(){
         
-        scoreDB.queryOrdered(byChild: "Scores").queryLimited(toLast: 10).observe(.childAdded) { (snapshot) in
+        DispatchQueue.main.async {
+          self.usersArray.removeAll()
+        }
+        
+        scoreDB.queryOrdered(byChild: "score").queryLimited(toLast: 10).observe(.childAdded) { (snapshot) in
             
             let snapshotValue = snapshot.value as? Dictionary<String, Any> ?? ["":""]
             let score = snapshotValue["score"]
