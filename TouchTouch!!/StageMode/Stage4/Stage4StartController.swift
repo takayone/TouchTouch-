@@ -77,8 +77,8 @@ class Stage4StartController: UIViewController{
             timer.invalidate()
             
             DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
-                let stage2GameField = Stage2GameField()
-                self.present(stage2GameField, animated: true, completion: nil)
+                let stage4GameField = Stage4GameField()
+                self.present(stage4GameField, animated: true, completion: nil)
             }
         }
     }
