@@ -21,6 +21,16 @@
 		3050F03E20F60F36002F073E /* StartTimerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3050F03D20F60F36002F073E /* StartTimerController.swift */; };
 		3050F04020F613CA002F073E /* MainGameFieldController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3050F03F20F613CA002F073E /* MainGameFieldController.swift */; };
 		305C678121311FE8000256E1 /* Users.swift in Sources */ = {isa = PBXBuildFile; fileRef = 305C678021311FE8000256E1 /* Users.swift */; };
+		308C7A5D213FB1AE005F9119 /* Stage1StartController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 308C7A5C213FB1AE005F9119 /* Stage1StartController.swift */; };
+		308C7A60213FB41B005F9119 /* SettingChangeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 308C7A5F213FB41B005F9119 /* SettingChangeController.swift */; };
+		308C7A62213FBD97005F9119 /* Stage1GameField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 308C7A61213FBD97005F9119 /* Stage1GameField.swift */; };
+		308C7A65213FC525005F9119 /* StageResultController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 308C7A64213FC525005F9119 /* StageResultController.swift */; };
+		308C7A67213FC67D005F9119 /* Stage2StartController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 308C7A66213FC67D005F9119 /* Stage2StartController.swift */; };
+		308C7A69213FCB7B005F9119 /* Stage2GameField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 308C7A68213FCB7B005F9119 /* Stage2GameField.swift */; };
+		308C7A6B21453056005F9119 /* Stage3StartController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 308C7A6A21453056005F9119 /* Stage3StartController.swift */; };
+		308C7A6D2145308C005F9119 /* Stage3GameField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 308C7A6C2145308C005F9119 /* Stage3GameField.swift */; };
+		308C7A6F214530C3005F9119 /* Stage4StartController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 308C7A6E214530C3005F9119 /* Stage4StartController.swift */; };
+		308C7A71214530FE005F9119 /* Stage4GameField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 308C7A70214530FE005F9119 /* Stage4GameField.swift */; };
 		A29396B8F78867AAB1032489 /* Pods_TouchTouch__.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD48D4D21AB4CD6100968DED /* Pods_TouchTouch__.framework */; };
 /* End PBXBuildFile section */
 
@@ -42,6 +52,16 @@
 		3050F03D20F60F36002F073E /* StartTimerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartTimerController.swift; sourceTree = "<group>"; };
 		3050F03F20F613CA002F073E /* MainGameFieldController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainGameFieldController.swift; sourceTree = "<group>"; };
 		305C678021311FE8000256E1 /* Users.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Users.swift; sourceTree = "<group>"; };
+		308C7A5C213FB1AE005F9119 /* Stage1StartController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stage1StartController.swift; sourceTree = "<group>"; };
+		308C7A5F213FB41B005F9119 /* SettingChangeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingChangeController.swift; sourceTree = "<group>"; };
+		308C7A61213FBD97005F9119 /* Stage1GameField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stage1GameField.swift; sourceTree = "<group>"; };
+		308C7A64213FC525005F9119 /* StageResultController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StageResultController.swift; sourceTree = "<group>"; };
+		308C7A66213FC67D005F9119 /* Stage2StartController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stage2StartController.swift; sourceTree = "<group>"; };
+		308C7A68213FCB7B005F9119 /* Stage2GameField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stage2GameField.swift; sourceTree = "<group>"; };
+		308C7A6A21453056005F9119 /* Stage3StartController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stage3StartController.swift; sourceTree = "<group>"; };
+		308C7A6C2145308C005F9119 /* Stage3GameField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stage3GameField.swift; sourceTree = "<group>"; };
+		308C7A6E214530C3005F9119 /* Stage4StartController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stage4StartController.swift; sourceTree = "<group>"; };
+		308C7A70214530FE005F9119 /* Stage4GameField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stage4GameField.swift; sourceTree = "<group>"; };
 		CD48D4D21AB4CD6100968DED /* Pods_TouchTouch__.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TouchTouch__.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA299B94A28EA396CFB9B23A /* Pods-TouchTouch!!.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TouchTouch!!.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TouchTouch!!/Pods-TouchTouch!!.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -88,9 +108,11 @@
 		302667FF20EBA1EA00D12682 /* TouchTouch!! */ = {
 			isa = PBXGroup;
 			children = (
-				308C7A57213FB053005F9119 /* StageMode */,
 				305C678221312601000256E1 /* Models */,
+				3026681420EBA57700D12682 /* SingupLogin */,
 				308C7A56213FAFF8005F9119 /* SingleMode */,
+				308C7A57213FB053005F9119 /* StageMode */,
+				308C7A5E213FB383005F9119 /* SettingChange */,
 				3026680020EBA1EA00D12682 /* AppDelegate.swift */,
 				3026680220EBA1EA00D12682 /* MainViewController.swift */,
 				3026680420EBA1EA00D12682 /* Main.storyboard */,
@@ -132,7 +154,6 @@
 		305C678221312601000256E1 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				3026681420EBA57700D12682 /* SingupLogin */,
 				305C678021311FE8000256E1 /* Users.swift */,
 			);
 			path = Models;
@@ -150,8 +171,65 @@
 		308C7A57213FB053005F9119 /* StageMode */ = {
 			isa = PBXGroup;
 			children = (
+				308C7A58213FB136005F9119 /* Stage1 */,
+				308C7A59213FB141005F9119 /* Stage2 */,
+				308C7A5A213FB14B005F9119 /* Stage3 */,
+				308C7A5B213FB16A005F9119 /* Stage4 */,
+				308C7A63213FC4D7005F9119 /* Result */,
 			);
 			path = StageMode;
+			sourceTree = "<group>";
+		};
+		308C7A58213FB136005F9119 /* Stage1 */ = {
+			isa = PBXGroup;
+			children = (
+				308C7A5C213FB1AE005F9119 /* Stage1StartController.swift */,
+				308C7A61213FBD97005F9119 /* Stage1GameField.swift */,
+			);
+			path = Stage1;
+			sourceTree = "<group>";
+		};
+		308C7A59213FB141005F9119 /* Stage2 */ = {
+			isa = PBXGroup;
+			children = (
+				308C7A66213FC67D005F9119 /* Stage2StartController.swift */,
+				308C7A68213FCB7B005F9119 /* Stage2GameField.swift */,
+			);
+			path = Stage2;
+			sourceTree = "<group>";
+		};
+		308C7A5A213FB14B005F9119 /* Stage3 */ = {
+			isa = PBXGroup;
+			children = (
+				308C7A6A21453056005F9119 /* Stage3StartController.swift */,
+				308C7A6C2145308C005F9119 /* Stage3GameField.swift */,
+			);
+			path = Stage3;
+			sourceTree = "<group>";
+		};
+		308C7A5B213FB16A005F9119 /* Stage4 */ = {
+			isa = PBXGroup;
+			children = (
+				308C7A6E214530C3005F9119 /* Stage4StartController.swift */,
+				308C7A70214530FE005F9119 /* Stage4GameField.swift */,
+			);
+			path = Stage4;
+			sourceTree = "<group>";
+		};
+		308C7A5E213FB383005F9119 /* SettingChange */ = {
+			isa = PBXGroup;
+			children = (
+				308C7A5F213FB41B005F9119 /* SettingChangeController.swift */,
+			);
+			path = SettingChange;
+			sourceTree = "<group>";
+		};
+		308C7A63213FC4D7005F9119 /* Result */ = {
+			isa = PBXGroup;
+			children = (
+				308C7A64213FC525005F9119 /* StageResultController.swift */,
+			);
+			path = Result;
 			sourceTree = "<group>";
 		};
 		5F5679C32EA54DE59BB644D3 /* Pods */ = {
@@ -311,13 +389,23 @@
 			files = (
 				3026680320EBA1EA00D12682 /* MainViewController.swift in Sources */,
 				3026681820EBA9EA00D12682 /* LoginController.swift in Sources */,
+				308C7A71214530FE005F9119 /* Stage4GameField.swift in Sources */,
+				308C7A69213FCB7B005F9119 /* Stage2GameField.swift in Sources */,
 				3011696F212AFFA3005AC28A /* ResultViewController.swift in Sources */,
+				308C7A6F214530C3005F9119 /* Stage4StartController.swift in Sources */,
+				308C7A62213FBD97005F9119 /* Stage1GameField.swift in Sources */,
+				308C7A6D2145308C005F9119 /* Stage3GameField.swift in Sources */,
 				305C678121311FE8000256E1 /* Users.swift in Sources */,
+				308C7A65213FC525005F9119 /* StageResultController.swift in Sources */,
+				308C7A67213FC67D005F9119 /* Stage2StartController.swift in Sources */,
 				3050F03E20F60F36002F073E /* StartTimerController.swift in Sources */,
+				308C7A60213FB41B005F9119 /* SettingChangeController.swift in Sources */,
 				3026680120EBA1EA00D12682 /* AppDelegate.swift in Sources */,
 				302BFEC22136C851005BD839 /* RankingViewCell.swift in Sources */,
 				3026681620EBA5A000D12682 /* SignUpController.swift in Sources */,
 				3050F04020F613CA002F073E /* MainGameFieldController.swift in Sources */,
+				308C7A5D213FB1AE005F9119 /* Stage1StartController.swift in Sources */,
+				308C7A6B21453056005F9119 /* Stage3StartController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

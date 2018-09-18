@@ -11,59 +11,6 @@ import Firebase
 
 class MainViewController: UIViewController {
     
-
-//    let profileImageView: UIImageView = {
-//        let imageView = UIImageView()
-//        //後ほどURLからダウンロード
-//        imageView.image = #imageLiteral(resourceName: "pic5")
-//        imageView.contentMode = .scaleAspectFill
-//        imageView.clipsToBounds = true
-//        imageView.layer.cornerRadius = 100 / 2
-//        return imageView
-//    }()
-//
-//    let nameLabel: UILabel = {
-//        let label = UILabel()
-//        //後ほどFirebaseから取ってくる
-//        label.text = "米田"
-//        label.textColor = UIColor.white
-//        label.font = UIFont.boldSystemFont(ofSize: 30)
-//        label.numberOfLines = 2
-//        return label
-//    }()
-//
-//    func retriveUser(){
-//        guard let uid = Auth.auth().currentUser?.uid else {return}
-//        let userDB = Database.database().reference().child("users")
-//        userDB.child(uid).observeSingleEvent(of: .value) { (snapshot) in
-//
-//            let snapShotValue = snapshot.value as? [String: Any] ?? ["": ""]
-//            self.username = snapShotValue["username"] as? String ?? ""
-//            let profileImageUrl = snapShotValue["profileImageUrl"] as? String ?? ""
-//
-//            print(profileImageUrl)
-//        }
-//    }
-//
-//    let highestLabel: UILabel = {
-//        let label = UILabel()
-//        label.text = "Highest Score"
-//        label.textColor = UIColor.white
-//        label.font = UIFont.boldSystemFont(ofSize: 30)
-//        label.textAlignment = .center
-//        return label
-//    }()
-//
-//    let scoreLabel: UILabel = {
-//        let label = UILabel()
-//        //後ほどFirebaseから取ってくる
-//        label.text = "50"
-//        label.textColor = UIColor.white
-//        label.font = UIFont.boldSystemFont(ofSize: 100)
-//        label.textAlignment = .center
-//        return label
-//    }()
-    
     let touchButtonImage: UIImageView = {
         let imageView = UIImageView()
         imageView.image = #imageLiteral(resourceName: "touchButton").withRenderingMode(.alwaysOriginal)
@@ -92,6 +39,49 @@ class MainViewController: UIViewController {
         let startTimerController = StartTimerController()
         self.present(startTimerController, animated: true, completion: nil)
     }
+    
+    let stageModeImage: UIImageView = {
+        let imageView = UIImageView()
+        imageView.image = #imageLiteral(resourceName: "stairs").withRenderingMode(.alwaysOriginal)
+        imageView.contentMode = .scaleAspectFill
+        return imageView
+    }()
+    
+    let stageModeButton: UIButton = {
+        let button = UIButton(type: .system)
+        button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 18)
+        button.setTitle("Stage Mode", for: .normal)
+        button.addTarget(self, action: #selector(handleStageMode), for: .touchUpInside)
+        return button
+    }()
+    
+    @objc func handleStageMode(){
+        
+        let stage1StartController = Stage1StartController()
+        self.present(stage1StartController, animated: true, completion: nil)
+    }
+    
+    let changeSettingImage: UIImageView = {
+        let imageView = UIImageView()
+        imageView.image = #imageLiteral(resourceName: "changeProfile").withRenderingMode(.alwaysOriginal)
+        imageView.contentMode = .scaleAspectFill
+        return imageView
+    }()
+    
+    let changeSettingButton: UIButton = {
+        let button = UIButton(type: .system)
+        button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 18)
+        button.setTitle("Setting Change", for: .normal)
+        button.addTarget(self, action: #selector(handleSetting), for: .touchUpInside)
+        return button
+    }()
+    
+    @objc func handleSetting(){
+        
+        let settingChangeController = SettingChangeController()
+        self.present(settingChangeController, animated: true, completion: nil)
+    }
+    
     
     let logoutImage: UIImageView = {
         let imageView = UIImageView()
@@ -163,10 +153,40 @@ class MainViewController: UIViewController {
         startImage.widthAnchor.constraint(equalToConstant: 30).isActive = true
         startImage.heightAnchor.constraint(equalToConstant: 30).isActive = true
         
+        view.addSubview(stageModeButton)
+        stageModeButton.translatesAutoresizingMaskIntoConstraints = false
+        stageModeButton.backgroundColor = UIColor.white
+        stageModeButton.topAnchor.constraint(equalTo: startGameButton.bottomAnchor, constant: 30).isActive = true
+        stageModeButton.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 10).isActive = true
+        stageModeButton.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -10).isActive = true
+        stageModeButton.heightAnchor.constraint(equalToConstant: 50).isActive = true
+        
+        view.addSubview(stageModeImage)
+        stageModeImage.translatesAutoresizingMaskIntoConstraints = false
+        stageModeImage.centerYAnchor.constraint(equalTo: stageModeButton.centerYAnchor).isActive = true
+        stageModeImage.leftAnchor.constraint(equalTo: stageModeButton.leftAnchor, constant: 30).isActive = true
+        stageModeImage.widthAnchor.constraint(equalToConstant: 30).isActive = true
+        stageModeImage.heightAnchor.constraint(equalToConstant: 30).isActive = true
+        
+        view.addSubview(changeSettingButton)
+        changeSettingButton.translatesAutoresizingMaskIntoConstraints = false
+        changeSettingButton.backgroundColor = UIColor.white
+        changeSettingButton.topAnchor.constraint(equalTo: stageModeButton.bottomAnchor, constant: 30).isActive = true
+        changeSettingButton.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 10).isActive = true
+        changeSettingButton.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -10).isActive = true
+        changeSettingButton.heightAnchor.constraint(equalToConstant: 50).isActive = true
+        
+        view.addSubview(changeSettingImage)
+        changeSettingImage.translatesAutoresizingMaskIntoConstraints = false
+        changeSettingImage.centerYAnchor.constraint(equalTo: changeSettingButton.centerYAnchor).isActive = true
+        changeSettingImage.leftAnchor.constraint(equalTo: changeSettingButton.leftAnchor, constant: 30).isActive = true
+        changeSettingImage.widthAnchor.constraint(equalToConstant: 30).isActive = true
+        changeSettingImage.heightAnchor.constraint(equalToConstant: 30).isActive = true
+        
         view.addSubview(logoutButton)
         logoutButton.translatesAutoresizingMaskIntoConstraints = false
         logoutButton.backgroundColor = UIColor.white
-        logoutButton.topAnchor.constraint(equalTo: startGameButton.bottomAnchor, constant: 50).isActive = true
+        logoutButton.topAnchor.constraint(equalTo: changeSettingButton.bottomAnchor, constant: 30).isActive = true
         logoutButton.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 10).isActive = true
         logoutButton.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -10).isActive = true
         logoutButton.heightAnchor.constraint(equalToConstant: 50).isActive = true
